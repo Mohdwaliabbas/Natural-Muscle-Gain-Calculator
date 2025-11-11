@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==================== -->
+    <!-- ✅ SEO & META TAGS -->
+    <!-- ==================== -->
+    <title>Natural Muscle Gain Calculator | Wali Abbas</title>
+    <meta name="description" content="Free Natural Pure Muscle Gain Calculator for males — estimate your pure muscle gain based on age, workout quality, diet, and genetics.">
+    <meta name="keywords" content="muscle gain calculator, natural muscle calculator, fitness, bodybuilding, body fat calculator, muscle growth estimator, Wali Abbas">
+    <meta name="author" content="Wali Abbas">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/">
+    <meta property="og:title" content="Natural Pure Muscle Gain Calculator for Males">
+    <meta property="og:description" content="Estimate your natural pure muscle gain potential using this accurate fitness calculator by Wali Abbas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:image" content="https://yourwebsite.com/thumbnail.jpg">
+    <meta name="theme-color" content="#00ff99">
+    <!-- ==================== -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <h1>Natural Pure (Only) Muscle Gain Calculator For Males</h1>
+
+        <div class="description">
+            This is a Muscle Gain Calculator <b>for males</b> which estimates the <b>pure muscle (not fat or weight)</b> you can gain <b>naturally</b> in upcoming time.
+            This calculator just estimates the muscle gain based on your given inputs which is good for approx.
+            Actual muscle gain in a given time can differ from estimated muscle gain because there are many number
+            of other factors which are not included like sleep, recovery, hormonal imbalance etc.
+            But for estimation this calculator is good and reliable.
+            It will help you achieve your muscle gain target by estimating it before.
+            <b>If you don't know how to use it or what each entry actually means then read "How to use" below.</b>
+        </div>
+
+        <!-- Muscle Gain Inputs -->
+        <input type="number" id="age" placeholder="Enter Age (16 - 60)">
+        <input type="number" id="trainingTime" placeholder="How many number of months you trained already. If just started enter 0.">
+
+        <select id="resultTime" style="width:100%;">
+            <option value="" selected disabled>In how many months you want to see results</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+
+        <select id="workoutQuality" style="width:100%;">
+            <option value="" selected disabled>Workout Quality (Training style you follow for upcoming selected months)</option>
+            <option value="Low (Not Consistent)">Low (Not Consistent)</option>
+            <option value="Medium (Consistent but not Focused)">Medium (Consistent but not Focused)</option>
+            <option value="High (Consistent plus Focused and Training till failure)">High (Consistent plus Focused and Training till failure)</option>
+        </select>
+        
+        <select id="dietQuality" style="width:100%;">
+            <option value="" selected disabled>Diet Quality (Diet you will maintain for upcoming entered months)</option>
+            <option value="Poor (Low protein and calorie diet (≥0.5X and <1X gram protein))">Poor (Low protein and calorie diet (≥0.5X and <1X gram protein))</option>
+            <option value="Average (Good protein and calorie diet (≥1X and <1.5X gram protein))">Average (Good protein and calorie diet (≥1X and <1.5X gram protein))</option>
+            <option value="Good (High protein and calorie diet (>1.5X gram protein))">Good (High protein and calorie diet (>1.5X gram protein))</option>
+        </select>
+
+        <select id="geneticsType" style="width:100%;">
+            <option value="" selected disabled>Genetics</option>
+            <option value="Hard Muscle Gainer">Hard Muscle Gainer</option>
+            <option value="Average Muscle Gainer">Average Muscle Gainer</option>
+            <option value="Easy Muscle Gainer">Easy Muscle Gainer</option>
+        </select>
+
+        <!-- Optional Body Weight Section -->
+        <div class="optional-section">
+            <p><b>Optional - if you want to know your overall weight after your target months:</b></p>
+            
+            <input type="number" id="currentWeight" placeholder="Enter Current Body Weight (in kg)">
+            <input type="number" id="currentFat" placeholder="Enter Current Body Fat Percentage (%)">
+            <input type="number" id="desiredFat" placeholder="Enter Desired Body Fat (%) after target months">
+
+            <p><b>If you don't know your current body fat (%), then don't worry — use the Body Fat (%) Calculator below to estimate your current body fat (%).</b></p>
+        </div>
+
+        <!-- Main Calculate Button -->
+        <button id="calculateBtn">Calculate</button>
+
+        <!-- Muscle Gain Result Display -->
+        <div class="result-display" id="resultDisplay"></div>
+
+        <!-- Body Fat Calculator Section -->
+        <div class="bodyfat-section">
+            <h2>Body Fat Percentage (%) Calculator</h2>
+            <input type="number" id="height" placeholder="Enter your height (in cm)">
+            <input type="number" id="neck" placeholder="Enter Neck Circumference (in cm)">
+            <input type="number" id="waist" placeholder="Enter Waist Circumference (in cm)">
+            <p>Don't know how to measure all? Read below in end.</p>
+            <button id="bodyFatCalcBtn" class="blue-btn">Calculate</button>
+            
+            <!-- Body Fat Result Display -->
+            <div class="result-display" id="bodyFatResultDisplay"></div>
+        </div>
+
+        <!-- ========================= -->
+        <!-- 📘 HOW TO USE SECTION -->
+        <!-- ========================= -->
+        <div class="how-to-use" style="margin-top: 40px; text-align: left;">
+            <h2 style="color: #00ff99;">How to use both calculators</h2>
+            <h3 style="color: #00ccff;">Natural Pure Muscle Gain Calculator</h3>
+            <p><b>Explanation of each row:-</b></p>
+
+            <h4 style="color: #ffcc00;">Age</h4>
+            <p>In this box, you have to enter your current age. Your age should be between 16 to 60 years to use this calculator. Any value less or more than this will generate an error.</p>
+            
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <h4 style="color: #ffcc00;">How many number of months you trained already. If started enter 0.</h4>
+            <p>In this box, you need to enter the total number of months you have been training so far. <b>If you are just beginning your workout journey, enter 0 for months.</b></p>
+            
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <h4 style="color: #ffcc00;">In how many months you want to see results</h4>
+            <p>In this box, you have to select the number of upcoming months in which you want to see your muscle gain results. You can select a value between 0 and 12 months.</p>
+
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <h4 style="color: #ffcc00;">Workout Quality (Training style you follow for upcoming selected months)</h4>
+            
+            <h5 style="color: #00b3ff;">Low (Not Consistent)</h5>
+            <p>If you select this option, it means you will not be consistent (around 3 days a week) during your target months for any reason, and your focus on workouts will be relatively low.</p>
+
+            <h5 style="color: #00b3ff;">Medium (Consistent but not Focused)</h5>
+            <p>If you select this option, it means you will be consistent (around 5 to 6 days a week) during your target months, but workout intensity and training each muscle till failure will be missing — in short, you won’t be giving 100% effort.</p>
+
+            <h5 style="color: #00b3ff;">High (Consistent plus Focused and Training till failure)</h5>
+            <p>If you select this option, it means you will be highly consistent (around 6 days a week) during your target months with full intensity, training each muscle till complete failure — in short, giving your 100% effort in every workout.</p>
+
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <h4 style="color: #ffcc00;">Diet Quality (Diet you will maintain for upcoming entered months)</h4>
+
+            <h5 style="color: #00b3ff;">Poor (Low protein and calorie diet (≥0.5X and <1X gram protein))</h5>
+            <p>If you select this option, it means you will be following a poor diet — low in protein (around ≥0.5 and &lt;1× your body weight in grams) and calories at or below maintenance level.</p>
+
+            <h5 style="color: #00b3ff;">Average (Good protein and calorie diet (≥1X and <1.5X gram protein))</h5>
+            <p>If you select this option, it means you will be following an average diet — moderate protein intake (around ≥1 and &lt;1.5× your body weight in grams) and calories at maintenance or slight surplus.</p>
+
+            <h5 style="color: #00b3ff;">Good (High protein and calorie diet (>1.5X gram protein))</h5>
+            <p>If you select this option, it means you will be following a good diet — high in protein (more than 1.5× your body weight in grams) and calories in surplus, supporting faster muscle growth.</p>
+
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <h4 style="color: #ffcc00;">Genetics</h4>
+
+            <h5 style="color: #00b3ff;">Hard Gainer</h5>
+            <p>If you select this option, it means your genetics make it harder for you to gain muscle or weight. You might struggle to put on size even when eating a lot. If you’re unsure, you can also consider your family genetics — if people in your family tend to stay lean despite eating more, this option likely fits you.</p>
+
+            <h5 style="color: #00b3ff;">Average</h5>
+            <p>If you select this option, it means you have average genetics — you gain muscle and weight at a normal rate, neither too fast nor too slow.</p>
+
+            <h5 style="color: #00b3ff;">Easy Gainer</h5>
+            <p>If you select this option, it means you have good genetics and gain muscle easily. If increasing your diet quickly results in visible size gains or you naturally have a broad and slightly muscular build, you likely fall into this category.</p>
+
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <h4 style="color: #ffcc00;">Enter Current Body Weight (in kg)</h4>
+            <p>In this box, you have to enter your current body weight in kilograms (kg).</p>
+
+            <h4 style="color: #ffcc00;">Enter Current Body Fat Percentage (%)</h4>
+            <p>In this box, you have to enter your current body fat percentage (%). <b>If you don't know your body fat percentage, you can use the Body Fat Percentage (%) Calculator below the Muscle Gain Calculator.</b></p>
+
+            <h4 style="color: #ffcc00;">Enter Desired Body Fat (%) after target months</h4>
+            <p>In this box, you have to enter your desired body fat percentage (%) which you aim to achieve in your selected target months.</p>
+
+            <h4 style="color: #ffcc00;">What is Body Fat Percentage (%)</h4>
+            <p>Body Fat Percentage (%) represents how much of your total body weight consists of fat. For example, if a person weighs 70 kg and has 15% body fat, that means about 10.5 kg of their weight is fat, and 59.5 kg is lean mass (muscle, bones, organs, etc.). It’s an important metric to understand how much of your body weight is healthy muscle versus stored fat.</p>
+
+            <hr style="margin: 20px 0; border: 1px solid #555;">
+
+            <!-- 👇 New Section Added with Polished Grammar -->
+            <h3 style="color: #00ccff;">Body Fat Percentage (%) Calculator</h3>
+            <p><b>Explanation of each row:-</b></p>
+
+            <h4 style="color: #ffcc00;">Enter your height (in cm)</h4>
+            <p>In this box, you have to enter your height in centimeters (cm). <b>Stand straight and barefoot while measuring your height.</b></p>
+
+            <h4 style="color: #ffcc00;">Enter Neck Circumference (in cm)</h4>
+            <p>In this box, you have to enter your neck circumference in centimeters (cm). <b>Measure around the neck just below the larynx (Adam’s apple).</b></p>
+
+            <h4 style="color: #ffcc00;">Enter Waist Circumference (in cm)</h4>
+            <p>In this box, you have to enter your waist circumference in centimeters (cm). <b>Measure around the waist at the level of the navel (relaxed, not sucked in).</b></p>
+            <!-- 👆 Section End -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
