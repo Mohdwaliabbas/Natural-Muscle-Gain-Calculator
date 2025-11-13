@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohdwaliabbas.github.io/Natural-Muscle-Gain-Calculator/sitemap.xml
