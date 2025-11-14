@@ -55,6 +55,17 @@ input, select {
     text-overflow: ellipsis;
 }
 
+/* 👇 NEW FIX: Wrap placeholder text properly (important!) */
+input {
+    overflow-wrap: break-word !important;
+    text-overflow: clip !important;
+}
+
+/* 👇 NEW FIX: Allow placeholder to wrap on mobile */
+input::placeholder {
+    white-space: normal !important;
+}
+
 input:focus, select:focus {
     border: 1px solid #00ff99;
 }
